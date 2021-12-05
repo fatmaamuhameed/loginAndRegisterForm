@@ -1,0 +1,39 @@
+input{
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 6px 30px;       
+}
+input:focus{
+    outline: none;
+}
+.login-icons {
+    top: 10px;
+    left: 10px;
+}
+.login-button{
+    padding: 10px 30px;
+}
+.social-icon {
+    font-size: 30px;
+    margin-left: 7px;
+}
+.fac {
+    color: #3b5998;
+}
+.tw{
+    color: #1da0f2;
+}
+.go{
+    color: #e72734;
+}
+.content{
+    box-shadow: 2px 5px rgb(236, 236, 236);
+    border-radius: 8px;
+    width: 900px;
+    height: 482px;
+}
+@media only screen and (max-width: 768px) {
+    .row>* {
+        width: auto;
+    }
+}
