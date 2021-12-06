@@ -34,5 +34,6 @@ input:focus{
 @media only screen and (max-width: 768px) {
     .row>* {
         width: auto;
+        max-width: none;
     }
 }
