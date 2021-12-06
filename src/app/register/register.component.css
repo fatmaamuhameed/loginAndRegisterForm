@@ -1,6 +1,5 @@
 .RegisterForm{
-  width: 900px;
-  height: 482px;
+
   border-radius: 5px;
   box-shadow: 2px 5px rgb(236,236,236);
 }
@@ -13,6 +12,9 @@
   background-color: transparent;
   border-radius: 0;
   font-family: "Font Awesome 5 Brands" !important;
+}
+.form-check-label{
+  font-size: 12px;
 }
 .useFontAwesomeFamily::placeholder { /* Most modern browsers */
   font-family: "Font Awesome 5 Brands" !important;
