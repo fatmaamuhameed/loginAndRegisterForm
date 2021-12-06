@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Router, Routes } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -29,7 +30,10 @@ export class LoginComponent implements OnInit {
       this.AuthService.login(loginForm.value)
       .subscribe((response) => {
         console.log(response);
+      
+        localStorage.setItem("currentUser", response.token);
         this.Router.navigate(['/profile'])
+
       }, error => {
         console.log(error.error.message);
         this.error = error.error.message;
