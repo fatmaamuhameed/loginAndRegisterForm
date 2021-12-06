@@ -14,4 +14,10 @@ export class AuthService {
   signUp(data:User):Observable<any> {
     return this._http.post(`http://192.168.1.57:7000/registerUser`, data)
 }
+
+login(formData:object):Observable<any>
+{
+
+  return this._http.post('http://192.168.1.57:7000/loginUser' ,formData)
+}
 }
