@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row p-5">
       <div class="col-lg-6 col-md-6 col-sm-12 ">
-        <form [formGroup]="registerForm" class="row "  (ngSubmit)="onSubmit(registerForm)">
+        <form [formGroup]="registerForm" class="row "  (ngSubmit)="onSubmit(registerForm.value)">
             <h2>Sign up</h2>
             <div class="form-group col-lg-10 col-md-12 col-sm-12">
               <label for=""></label>

@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Router, Routes } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -22,14 +23,19 @@ export class LoginComponent implements OnInit {
   submitForm(loginForm: any) {
 
     console.log(loginForm);
-    
+
     if (loginForm.valid) {
 
 
       this.AuthService.login(loginForm.value)
       .subscribe((response) => {
         console.log(response);
+
+        localStorage.setItem("currentUser", response.token);
+        localStorage.setItem("UserDisplay", JSON.stringify(response.user));
+
         this.Router.navigate(['/profile'])
+
       }, error => {
         console.log(error.error.message);
         this.error = error.error.message;
