@@ -22,11 +22,12 @@ export class RegisterComponent implements OnInit {
   }
 
   onSubmit(data:any){
+    console.log("data" , data);
 
     this._Auth.signUp(data.value).subscribe(res => {
       //this.registerForm = res
       console.log(res);
-      console.log(data);
+      console.log(data.value);
 
     })
 
