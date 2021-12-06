@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth.service';
 
 
 @Component({
@@ -9,15 +10,26 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 })
 export class RegisterComponent implements OnInit {
 
-  registerForm = new FormGroup({
-    name: new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(20)]),
-    password_confirmation: new FormControl(null,[Validators.required,Validators.maxLength(15)]),
+  registerForm:any = new FormGroup({
+    userName: new FormControl(null,[Validators.required,Validators.minLength(3),Validators.maxLength(15)]),
+    confirmPassword: new FormControl(null,[Validators.required,Validators.maxLength(15)]),
     email: new FormControl(null,[Validators.required,Validators.email]),
-    password: new FormControl(null,[Validators.required,Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"),Validators.maxLength(15)]),
+    userPassword: new FormControl(null,[Validators.required,Validators.pattern("^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"),Validators.maxLength(15)]),
   })
-  constructor() { }
+  constructor(private _Auth:AuthService) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(data:any){
+
+    this._Auth.signUp(data.value).subscribe(res => {
+      this.registerForm = res
+      console.log(this.registerForm);
+      console.log(data.value);
+
+    })
+
   }
 
 }
