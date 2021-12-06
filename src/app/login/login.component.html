@@ -9,20 +9,23 @@
                 </div>
                 <div class="col-lg-6">
                     <h2 class="mt-2">Login</h2>
-                    <form class="mt-5" [formGroup]='loginForm'>
+                    <div *ngIf="error" class="alert alert-danger">
+                        {{error}}
+                    </div>
+                    <form class="mt-5" [formGroup]='loginForm' (ngSubmit)='submitForm(loginForm)'>
                         <div>
                             <div class="position-relative">
                                 <i class=" login-icons fas fa-user position-absolute"></i>
 
                             </div>
-                            <input type="text" placeholder="Your Name" formControlName="userName">
+                            <input type="email" placeholder="Your Email" formControlName="email">
                         </div>
 
                         <div class="mt-4">
                             <div class="position-relative">
                                 <i class="login-icons position-absolute fas fa-lock"></i>
                             </div>
-                            <input type="password" placeholder="Password" formControlName="password">
+                            <input type="password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" placeholder="Password" formControlName="userPassword">
                         </div>
 
                         <div class="mt-4">
@@ -31,7 +34,7 @@
                         </div>
 
                         <div class="mt-5">
-                            <button [disabled]='loginForm.invalid' class="btn btn-primary login-button">Log in</button>
+                            <button [disabled] = "loginForm.invalid"  class="btn btn-primary login-button">Log in</button>
                         </div>
                     </form>
                 </div>
