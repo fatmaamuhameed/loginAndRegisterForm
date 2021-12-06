@@ -24,8 +24,8 @@ export class RegisterComponent implements OnInit {
   onSubmit(data:any){
 
     this._Auth.signUp(data.value).subscribe(res => {
-      this.registerForm = res
-      console.log(this.registerForm);
+      //this.registerForm = res
+      console.log(res);
       console.log(data.value);
 
     })
