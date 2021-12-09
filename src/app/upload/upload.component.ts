@@ -25,20 +25,20 @@ export class UploadComponent implements OnInit {
   }
 
   // this function upload image and send to api services
-  processFile(imageInput: any) {
-    const file:File = imageInput.files[0];
+  // processFile(imageInput: any) {
+  //   const file:File = imageInput.files[0];
 
-      this.imageService.uploadImage(file).subscribe(
-        (res) => {
-            console.log(res);
-        },
-        (err) => {
-            console.log(err);
+  //     this.imageService.uploadImage(file).subscribe(
+  //       (res) => {
+  //           console.log(res);
+  //       },
+  //       (err) => {
+  //           console.log(err);
 
-        })
+  //       })
 
 
-  }
+  // }
 
   // this function for signIn With Google
   signIn(){

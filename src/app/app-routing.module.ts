@@ -1,3 +1,4 @@
+import { UploadImagesComponent } from './upload-images/upload-images.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
@@ -12,8 +13,9 @@ const routes: Routes = [
     {path:'',component:RegisterComponent},
     {path:'register',component:RegisterComponent},
     {path:'profile',component:ProfileComponent},
-    {path:'image' , component:UploadComponent}
+    {path:'image' , component:UploadComponent},
 
+    {path:'uploadImages' , component: UploadImagesComponent}
   ] }
 ];
 
