@@ -1,0 +1,39 @@
+<section>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="mt-2">
+                    <label>Upload Image: </label>
+                    <input type="file" accept="image/png , image/jpeg" class="form-control mt-2"  (change)="imageChange($event)">
+                    <button class="btn btn-info mt-2" (click)="uploadImage()">Upload Image</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-8">
+                <div class="alert alert-success" *ngIf="uplaodMess">
+                    <h3>{{uploadedMessage}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-8">
+                <div class="alert alert-danger" *ngIf="errorMess">
+                    <h3>{{errorMessage}}</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-3">
+            <div class="col-lg-8">
+               <div>
+                   <img [src]="urlImg" alt="">
+               </div>
+            </div>
+        </div>
+
+        
+
+    </div>
+</section>
