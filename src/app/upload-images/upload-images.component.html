@@ -1,5 +1,6 @@
 <section>
     <div class="container">
+        <!-- upload image -->
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="mt-2">
@@ -9,31 +10,27 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mt-3">
-            <div class="col-lg-8">
-                <div class="alert alert-success" *ngIf="uplaodMess">
-                    <h3>{{uploadedMessage}}</h3>
+
+        <!-- Show the loading bar until the image is loaded -->
+        <div class="row justify-content-center" *ngIf="loading">
+            <div class="col-md-6">
+                <div class="mt-2 fa-6x text-center text-success">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <h3>Loading .......</h3>
                 </div>
             </div>
         </div>
 
-        <div class="row justify-content-center mt-3">
-            <div class="col-lg-8">
-                <div class="alert alert-danger" *ngIf="errorMess">
-                    <h3>{{errorMessage}}</h3>
-                </div>
-            </div>
-        </div>
-
+        <!-- display image after uploaded and display image link -->
         <div class="row justify-content-center mt-3">
             <div class="col-lg-8">
                <div>
                    <img [src]="urlImg" alt="">
                </div>
+               <div>
+                   <h6 *ngIf="link">Here is link: <a [href]="urlImg" target="_blank">{{urlImg}}</a> </h6>
+               </div>
             </div>
         </div>
-
-        
-
     </div>
 </section>
