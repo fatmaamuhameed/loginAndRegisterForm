@@ -1,29 +1,42 @@
+
+<!-- Start Registertion Form -->
 <section class="RegisterForm mt-5">
   <div class="container">
     <div class="row p-5">
       <div class="col-lg-6 col-md-6 col-sm-12 ">
+        <!-- Am Using Reactive Forms  and maked forms from 4 input
+          userName -
+           Email -
+           userPassword -
+           confirmPassword -
+          then make function -
+          and must formControlName value == FormGroup object{data} can u look in register.component.ts -         onSubmit For send form data value
+          to register Api -
+         -->
         <form [formGroup]="registerForm" class="row "  (ngSubmit)="onSubmit(registerForm.value)">
             <h2>Sign up</h2>
+            <!-- input userName  -->
             <div class="form-group col-lg-10 col-md-12 col-sm-12">
               <label for=""></label>
               <input type="text"
                 class="form-control" name="name" id="name" aria-describedby="helpId" formControlName="userName"  placeholder="&#xf007; Your Name">
             </div>
-
+              <!-- input email -->
             <div class="form-group col-lg-10 col-md-12 col-sm-12">
               <input type="email"
                 class="form-control" name="email" id="email" aria-describedby="helpId" formControlName="email" placeholder="&#xf0e0;Your Email">
             </div>
-
+            <!-- input userPassword -->
             <div class="form-group col-lg-10 col-md-12 col-sm-12">
               <input type="password"
                 class="form-control" name="pass" id="pass" aria-describedby="helpId" formControlName="userPassword" placeholder="&#xf023; password">
             </div>
-
+              <!-- input confirmPassword -->
             <div class="form-group col-lg-10 col-md-12 col-sm-12">
               <input type="password"
                 class="form-control" name="repass" id="repass" aria-describedby="helpId" formControlName="confirmPassword" placeholder="&#xf023; Repeat your password">
             </div>
+            <!-- input check user if checked set token in localstorage if not checked set token in sessionstorage -->
             <div class="form-check">
               <label class="form-check-label">
                 <input type="checkbox" class="form-check-input" name="" id="" value="checkedValue" checked>
@@ -31,20 +44,19 @@
                 <a href="#" class="term-service text-black">Terms of service</a>
               </label>
             </div>
-
+            <!--  submit button -->
             <div class="btns mt-4">
-              <button type="submit" class="btn btn-primary mt-4" > Register </button>
+              <button type="submit"  class="btn btn-primary mt-4" > Register </button>
             </div>
         </form>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
         <img src="../../assets/images/signup-image.jpg" alt="">
-
+        <!-- that button if user have allready maill he can going to login form  -->
         <div class="alreadyHave w-75 mx-auto mt-5">
           <a routerLink="/login" class="text-black text-decoration-none"> I am already member </a>
         </div>
       </div>
     </div>
   </div>
-
 </section>
