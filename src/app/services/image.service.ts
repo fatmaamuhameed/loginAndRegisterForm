@@ -15,7 +15,7 @@ export class ImageService {
   private clientId: string = "YOUR_CLIENT_ID";
   private accessToken: string = "18a51fef5703d9e229d40c8dd0e837e1f6713629";
   imageLink: any;
-
+  completeUpload : boolean = false;
   constructor(private http: HttpClient) {}
 
   //this function take image and send it to imgur
@@ -30,11 +30,12 @@ export class ImageService {
     });
     let options = { headers: headers };
 
-    const imageData = this.http
+    this.http
       .post(this.url, formData, options)
-      .subscribe((res) => {
-        console.log(res);
+      .subscribe((res:any) => {
+        console.log(res.data.link);
+        this.completeUpload = true;
+        this.imageLink = res.data.link;
       });
-    console.log(imageData);
   }
 }

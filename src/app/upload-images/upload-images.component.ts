@@ -16,9 +16,9 @@ import { saveAs } from 'file-saver';
 export class UploadImagesComponent implements OnInit {
 
   imageFile!: File;
-  uploadedMessage : String = "" ;
+  uploadedMessage : String = "uploaded image" ;
   errorMessage : String = "" ; 
-  uplaodMess : boolean = false ;
+  uplaodMess : boolean = this.ImageService.completeUpload ;
   errorMess : boolean = false ;
   urlImg:String = "" ;
   //245df3decf0de2ecb1ee317a8483512dce881f0e
