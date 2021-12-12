@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
+declare var gapi: any; //this is the key
+
 @Injectable({
   providedIn: 'root',
 })
 export class GoogleSigninService {
+  
   //@ts-ignore
   private auth2: gapi.auth2.GoogleAuth;
   private subject = new ReplaySubject<gapi.auth2.GoogleUser>(1);
