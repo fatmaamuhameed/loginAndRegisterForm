@@ -1,5 +1,5 @@
 import { HttpHeaders } from '@angular/common/http';
-import { Router, Routes } from '@angular/router';
+import { ActivatedRoute, Router, Routes } from '@angular/router';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -10,8 +10,9 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  returnUrl: any;
 
-  constructor(private AuthService:AuthService , private Router:Router) { }
+  constructor(private AuthService:AuthService , private Router:Router , private active:ActivatedRoute) { }
 
   error : string = ""
   loginForm: any = new FormGroup({
@@ -21,6 +22,7 @@ export class LoginComponent implements OnInit {
   });
 
   submitForm(loginForm: any) {
+    this.returnUrl = this.active.snapshot.queryParams['returnUrl'] || '/';
 
     console.log(loginForm);
 
@@ -31,10 +33,10 @@ export class LoginComponent implements OnInit {
       .subscribe((response) => {
         console.log(response);
 
-        localStorage.setItem("currentUser", response.token);
+        localStorage.setItem("userToken", response.token);
         localStorage.setItem("UserDisplay", JSON.stringify(response.user));
 
-        this.Router.navigate(['/profile'])
+        this.Router.navigateByUrl(this.returnUrl)
 
       }, error => {
         console.log(error.error.message);

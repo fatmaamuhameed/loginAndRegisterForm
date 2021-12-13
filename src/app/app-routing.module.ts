@@ -5,17 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './register/register.component';
 import { UploadComponent } from './upload/upload.component';
+import { HomeComponent } from './home/home.component';
+import { PostComponent } from './post/post.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { AuthGuard } from './guards/auth.guard';
 
 const routes: Routes = [
-  {path:'' , component:AppComponent , children:[
     {path:'login' , component:LoginComponent},
-    {path:'',component:RegisterComponent},
+    {path:'',component:HomeComponent},
     {path:'register',component:RegisterComponent},
-    {path:'profile',component:ProfileComponent},
-    {path:'upload',component:UploadComponent}
+    {path:'profile',component:ProfileComponent,canActivate:[AuthGuard]},
+    {path:'upload',component:UploadComponent},
+    {path:'post/:id',component:PostComponent,canActivate:[AuthGuard]},
+    {path:'**',component:NotfoundComponent}
 
-  ] }
-];
+  ]
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

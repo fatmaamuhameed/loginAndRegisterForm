@@ -16,6 +16,10 @@ import { UploadImagesComponent } from './upload-images/upload-images.component';
 
 import { CommonModule } from '@angular/common';
 import { UploadComponent } from './upload/upload.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { PostComponent } from './post/post.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 
@@ -26,7 +30,11 @@ import { UploadComponent } from './upload/upload.component';
     LoginComponent,
     ProfileComponent,
     UploadComponent,
-    UploadImagesComponent
+    UploadImagesComponent,
+    NavbarComponent,
+    HomeComponent,
+    PostComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
