@@ -1,7 +1,7 @@
 import { variable } from '@angular/compiler/src/output/output_ast';
 import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
-import { GoogleSigninService } from '../services/google-signin.service';
-import { ImageService } from '../services/image.service';
+import { GoogleSigninService } from '../../services/google-signin.service';
+import { ImageService } from '../../services/image.service';
 
 
 @Component({

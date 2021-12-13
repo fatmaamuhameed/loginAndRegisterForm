@@ -1,5 +1,5 @@
-import { ImageService } from './../services/image.service';
-import { AuthService } from './../services/auth.service';
+import { ImageService } from '../../services/image.service';
+import { AuthService } from '../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 // import { AngularFireStorage } from '@angular/fire/storage';
 import { Observable } from 'rxjs';

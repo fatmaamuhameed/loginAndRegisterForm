@@ -1,6 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { ActivatedRoute, Router, Routes } from '@angular/router';
-import { AuthService } from './../services/auth.service';
+import { AuthService } from '../../../services/auth.service';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 

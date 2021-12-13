@@ -1,0 +1,13 @@
+<section>
+    <div class="container">
+        <form [formGroup]="emailForm" (ngSubmit)='sumbitForm(emailForm)'>
+            <label>email :</label>
+            <input formControlName="email" type="email" class="form-control w-25 mt-2" > 
+            <div *ngIf="emailForm.get('email').errors != null && emailForm.get('email').touched" class="alert alert-danger w-25 mt-2">
+                <p *ngIf="emailForm.get('email').errors.required">email is required</p>
+                <p *ngIf="emailForm.get('email').errors.pattern">email must be like this : example@domain.com</p>
+            </div>
+            <button class="btn btn-primary mt-2" [disabled]="emailForm.invalid">Submit</button>
+        </form>    
+    </div>    
+</section>
