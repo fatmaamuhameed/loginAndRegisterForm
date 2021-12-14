@@ -9,6 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { UploadImagesComponent } from './components/upload-images/upload-images.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
+
 // import { AngularFireModule } from '@angular/fire';
 // import { AngularFirestoreModule } from '@angular/fire/firestore';
 // import { AngularFireStorageModule } from '@angular/fire/storage';
@@ -22,6 +24,8 @@ import { PostComponent } from './components/post/post.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { EmailComponent } from './components/formsTemplates/email/email.component';
 import { IntegerInputsComponent } from './components/formsTemplates/integer-inputs/integer-inputs.component';
+import { DragDropComponent } from './components/drag-drop/drag-drop.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 
@@ -38,7 +42,8 @@ import { IntegerInputsComponent } from './components/formsTemplates/integer-inpu
     PostComponent,
     NotfoundComponent,
     EmailComponent,
-    IntegerInputsComponent
+    IntegerInputsComponent,
+    DragDropComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +51,9 @@ import { IntegerInputsComponent } from './components/formsTemplates/integer-inpu
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    PdfViewerModule
+    PdfViewerModule,
+    BrowserAnimationsModule,
+    DragDropModule,
   ],
   providers: [
 

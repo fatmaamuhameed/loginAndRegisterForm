@@ -7,8 +7,11 @@
          accept="image/*"
          (change)="processFile(imageInput)">
 </label> -->
+
+<!-- file input to upload files -->
 <input (change)="onFileSelected()" type="file" id="file">
 
+<!-- this section to view file after upload -->
 <pdf-viewer [src]="pdfSrc"
               [render-text]="true"
               [original-size]="false"

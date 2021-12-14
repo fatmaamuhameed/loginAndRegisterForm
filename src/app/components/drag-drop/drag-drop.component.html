@@ -1,0 +1,70 @@
+<div cdkDropListGroup>
+    <div class="example-container">
+      <h2>To do</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="todo"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of todo" cdkDrag>
+                <div class="dis w-100" data-toggle="modal" data-target="#staticBackdrop">{{item.name}}</div>
+                
+                
+  
+        </div>
+      </div>
+    </div>
+  
+    <div class="example-container">
+      <h2>Done</h2>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="done"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of done" cdkDrag>
+            <div class="dis w-100" >{{item.name}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="example-container">
+        <h2>Done</h2>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="test"
+          class="example-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="example-box" *ngFor="let item of test" cdkDrag>
+            <a class="dis w-100" data-toggle="modal" data-target="#staticBackdrop{{item.id}}" >{{item.name}}</a>
+          </div>
+        </div>
+      </div>
+  </div>
+   
+<div class="data" *ngFor="let item of todo">
+
+
+  <div class="modal fade" id="staticBackdrop{{item.id}}" data-backdrop="static" data-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">{{item.name}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
