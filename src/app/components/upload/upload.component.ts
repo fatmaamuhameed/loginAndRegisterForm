@@ -4,25 +4,35 @@ import { GoogleSigninService } from '../../services/google-signin.service';
 import { ImageService } from '../../services/image.service';
 
 
+
 @Component({
   selector: 'app-upload',
   templateUrl: './upload.component.html',
   styleUrls: ['./upload.component.css']
 })
 export class UploadComponent implements OnInit {
-  //@ts-ignore
-   // this variable = Google user profile to display data
-  public user: gapi.auth2.GoogleUser
-  constructor(private imageService: ImageService , private google:GoogleSigninService ,private ref:ChangeDetectorRef){}
-  ngOnInit(): void {
-    // this google api for display user data
-    this.google.obsarvable().subscribe(user => {
-      this.user = user
-      console.log(user);
+  pdfSrc : any
 
-      this.ref.detectChanges()
-    })
+  constructor(private imageService: ImageService , private google:GoogleSigninService ,private ref:ChangeDetectorRef){
+
   }
+  ngOnInit(): void {
+  
+  }
+
+  onFileSelected() {
+    let $img: any = document.querySelector('#file');
+  
+    if (typeof (FileReader) !== 'undefined') {
+        let reader = new FileReader();
+    
+        reader.onload = (e: any) => {
+            this.pdfSrc = e.target.result;
+        };
+    
+        reader.readAsArrayBuffer($img.files[0]);
+    }
+}
 
   // this function upload image and send to api services
   // processFile(imageInput: any) {
@@ -40,14 +50,6 @@ export class UploadComponent implements OnInit {
 
   // }
 
-  // this function for signIn With Google
-  signIn(){
-    this.google.signIn()
-  }
-
-  // this function for signOut With Google
-  signOut(){
-    this.google.signOut()
-  }
+  
 
 }

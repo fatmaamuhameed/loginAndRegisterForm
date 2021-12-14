@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { PdfViewerModule } from 'ng2-pdf-viewer';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './components/auth/register/register.component';
@@ -46,6 +46,7 @@ import { IntegerInputsComponent } from './components/formsTemplates/integer-inpu
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    PdfViewerModule
   ],
   providers: [
 

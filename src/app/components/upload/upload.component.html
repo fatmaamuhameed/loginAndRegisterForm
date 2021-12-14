@@ -7,13 +7,11 @@
          accept="image/*"
          (change)="processFile(imageInput)">
 </label> -->
+<input (change)="onFileSelected()" type="file" id="file">
 
-<!-- Google Auth SignIn And SignOut -->
-<a class="btn btn-primary"  (click)="signIn()" *ngIf="user == null" role="button"> SignIn </a>
-<a class="btn btn-primary"  (click)="signOut()" *ngIf="user != null" role="button"> SignOut </a>
+<pdf-viewer [src]="pdfSrc"
+              [render-text]="true"
+              [original-size]="false"
+              style="width: 600px; height: 500px"
+  ></pdf-viewer>
 
-
-<!-- Display User Name After login -->
-<div *ngIf="user != null">
-  <div>You Are Signed {{user.getBasicProfile().getName()}}</div>
-</div>
