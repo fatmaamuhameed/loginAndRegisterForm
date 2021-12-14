@@ -2,14 +2,12 @@
     <div class="container">
         <form [formGroup]="IntegerForm" (ngSubmit)='sumbitForm(IntegerForm)'>
             <label>only numbers :</label>
-            <input formControlName="integerInput" type="number" pattern="^[0-9]*$"  class="form-control w-25 mt-2" > 
+            <input formControlName="integerInput" type="number"  (keypress)="keyPress($event)" pattern="^[0-9]*$"  class="form-control w-25 mt-2" > 
             <div *ngIf="IntegerForm.get('integerInput').errors != null && IntegerForm.get('integerInput').touched" class="alert alert-danger w-25 mt-2">
                 <p *ngIf="IntegerForm.get('integerInput').errors.required">This Field is required</p>
                 <p *ngIf="IntegerForm.get('integerInput').errors.pattern">MaxLength is {{maxLength}} & MinLength is {{minLength}} </p>                
-
             </div>
             <button class="btn btn-primary mt-2" [disabled]="IntegerForm.invalid">Submit</button>
         </form>    
     </div>    
-    
 </section>

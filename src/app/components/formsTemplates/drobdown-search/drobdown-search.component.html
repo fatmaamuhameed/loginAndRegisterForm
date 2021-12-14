@@ -1,0 +1,21 @@
+<section>
+    <div class="container">
+        <form>
+            <!-- install angular matrial autocomplete -->
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>search</mat-label>
+              <input type="text"
+                     placeholder="search here"
+                     aria-label="text"
+                     matInput
+                     [formControl]="myControl"
+                     [matAutocomplete]="auto">
+              <mat-autocomplete #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                  {{option}}
+                </mat-option>
+              </mat-autocomplete>
+            </mat-form-field>
+          </form>
+    </div>    
+</section>

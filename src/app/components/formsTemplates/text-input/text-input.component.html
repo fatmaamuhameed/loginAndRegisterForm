@@ -1,0 +1,11 @@
+<form [formGroup]="textForm" (ngSubmit)='sumbitForm(textForm)'>
+    <label>text here :</label>
+    <input formControlName="textInput" type="text" class="form-control w-25 mt-2">
+    <div *ngIf="textForm.get('textInput').errors != null && textForm.get('textInput').touched"
+        class="alert alert-danger w-25 mt-2">
+        <p *ngIf="textForm.get('textInput').errors.required">text is required</p>
+        <p *ngIf="textForm.get('textInput').errors.maxlength">Max Length must be {{maxLength}}</p>
+        <p *ngIf="textForm.get('textInput').errors.minlength">Min Length must be {{minLength}}</p>
+    </div>
+    <button class="btn btn-primary mt-2" [disabled]="textForm.invalid">Submit</button>
+</form>

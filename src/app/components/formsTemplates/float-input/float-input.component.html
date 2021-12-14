@@ -1,0 +1,13 @@
+<section>
+    <div class="container">
+        <form [formGroup]="FloatForm" (ngSubmit)='sumbitForm(FloatForm)'>
+            <label>only floats :</label>
+            <input formControlName="floatInput" type="number" (keypress)="keyPress($event)" pattern="^[0-9]+\.[0-9]{1,4}$"  class="form-control w-25 mt-2" > 
+            <div *ngIf="FloatForm.get('floatInput').errors != null && FloatForm.get('floatInput').touched" class="alert alert-danger w-25 mt-2">
+                <p *ngIf="FloatForm.get('floatInput').errors.required">This Field is required</p>
+                <p *ngIf="FloatForm.get('floatInput').errors.pattern">MaxLength is {{maxLength}} & MinLength is {{minLength}} </p>                
+            </div>
+            <button class="btn btn-primary mt-2" [disabled]="FloatForm.invalid">Submit</button>
+        </form>    
+    </div>    
+</section>
