@@ -26,6 +26,7 @@ import { EmailComponent } from './components/formsTemplates/email/email.componen
 import { IntegerInputsComponent } from './components/formsTemplates/integer-inputs/integer-inputs.component';
 import { DragDropComponent } from './components/drag-drop/drag-drop.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { InputSoluyionComponent } from './components/input-soluyion/input-soluyion.component';
 
 
 
@@ -43,7 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     NotfoundComponent,
     EmailComponent,
     IntegerInputsComponent,
-    DragDropComponent
+    DragDropComponent,
+    InputSoluyionComponent
   ],
   imports: [
     BrowserModule,
