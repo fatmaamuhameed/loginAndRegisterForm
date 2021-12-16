@@ -13,6 +13,7 @@ export class WorkflowComponent implements OnInit {
   constructor() { 
 
   }
+  //drop function 
   drop(event: any) {
     console.log(event);
     this.htmlYouWantToAdd = "<input/>";
