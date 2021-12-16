@@ -1,3 +1,4 @@
+import { GenerateInputsComponent } from './components/generate-inputs/generate-inputs.component';
 import { TextInputComponent } from './components/formsTemplates/text-input/text-input.component';
 import { DrobdownSearchComponent } from './components/formsTemplates/drobdown-search/drobdown-search.component';
 import { PhoneComponent } from './components/formsTemplates/phone/phone.component';
@@ -29,6 +30,7 @@ const routes: Routes = [
     {path: 'phone' , component:PhoneComponent},
     {path: 'drobdown' , component:DrobdownSearchComponent},
     {path:'textinput' , component:TextInputComponent},
+    {path: 'generate' , component:GenerateInputsComponent},
     {path:'**',component:NotfoundComponent}
 
   ]

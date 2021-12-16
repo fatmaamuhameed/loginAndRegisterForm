@@ -28,6 +28,7 @@ import { PhoneComponent } from './components/formsTemplates/phone/phone.componen
 import { DrobdownSearchComponent } from './components/formsTemplates/drobdown-search/drobdown-search.component';
 import { TextInputComponent } from './components/formsTemplates/text-input/text-input.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { GenerateInputsComponent } from './components/generate-inputs/generate-inputs.component';
 
 
 
@@ -48,7 +49,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FloatInputComponent,
     PhoneComponent,
     DrobdownSearchComponent,
-    TextInputComponent
+    TextInputComponent,
+    GenerateInputsComponent
   ],
   imports: [
     BrowserModule,

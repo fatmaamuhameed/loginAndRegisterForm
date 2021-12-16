@@ -1,0 +1,78 @@
+<section>
+    <div class="container">
+        <form class="border p-2">
+            <div class="row justify-content-center">
+                <div class="col-lg-2 text-center d-flex align-items-center justify-content-center">
+                    <label>label Name: </label>
+                </div>
+                <div class="col-lg-3">
+                    <input type="text" class="form-control" #labelName>
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-lg-2 text-center d-flex align-items-center justify-content-center">
+                    <label>input type:</label>
+                </div>
+                <div class="col-lg-3">
+                    <select class="form-control" id="myList" (change)="selectType($event)">
+                        <option value="text" id="firstValue">text</option>
+                        <option value="number">number</option>
+                        <option value="file">file</option>
+                        <option value="checkbox">check box</option>
+                        <option value="radio">radio</option>
+                    </select>
+                </div>
+                
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-lg-4">
+                    <button class="btn btn-success" type="button" (click)="createInput(labelName.value)">Create</button>
+                </div>
+            </div>
+
+
+            <div class="row justify-content-center" *ngIf="displayResult">
+                <div class="col-lg-2 text-center d-flex align-items-center justify-content-center">
+                    <label>{{ labelNameRes }}</label>
+                </div>
+                <div class="col-lg-3">
+                    <input [type]="inputTypeRes" class="form-control">
+                </div>
+            </div>
+
+            <div class="row justify-content-center mt-3" *ngIf="freeText">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>enter values here:</label>
+                    </div>
+                    <div class="col-lg-6">
+                        <textarea #w3review name="w3review" rows="6" cols="50">
+
+                        </textarea>
+                        <div>
+                            <button class="btn btn-success" (click)="generate(w3review.value)">Generate</button>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+            <div class="row justify-content-center mt-3" *ngIf="freeText">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <label>{{ labelNameRes }}</label>
+
+                    </div>
+                    <div class="col-lg-6">
+                        <div *ngFor="let x of radioArrayRes">
+                            <input type="radio" [name]="labelNameRes" value="30">
+                            <label>{{x}}</label><br>
+                        </div>
+                    </div>
+                </div>                
+            </div>
+
+        </form>
+    </div>
+</section>
