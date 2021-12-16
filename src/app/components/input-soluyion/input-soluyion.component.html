@@ -1,1 +1,49 @@
-<p>input-soluyion works!</p>
+
+<section  class="container-fluid w-75">
+<div class="main-form">
+   <h3> Make Your Form </h3>
+   <form [formGroup]="inputMaker" class="appointment-form" (ngSubmit)="onSubmit(inputMaker.value)">
+    <h2>education appointment form</h2>
+    <div class="form-group-1">
+    <input type="text" name="name" id="name" formControlName="name" placeholder="Your Name" required />
+    <input type="text" name="label" formControlName="label" id="label" placeholder="Label Name" required />
+    <div class="select-list">
+    <select name="type" formControlName="type" id="type">
+    <option slected value="Input Type">Input Type</option>
+    <option value="text">text</option>
+    <option value="tel">tel</option>
+    <option value="number">number</option>
+    <option value="select">select</option>
+    </select>
+    </div>
+    </div>
+    <div class="form-submit">
+    <input type="submit" name="submit" id="submit" class="submit" value="Create Fields" />
+    </div>
+    </form>
+
+</div>
+<div  class="main-form mt-5">
+    <h3> Done Your Form </h3>
+    <form   class="appointment-form" (ngSubmit)="onSubmit($event.value)">
+        <div id="inputAdd" class="form-group-1">
+        </div>
+    </form>
+   
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

@@ -12,6 +12,7 @@ import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AuthGuard } from './guards/auth.guard';
 import { EmailComponent } from './components/formsTemplates/email/email.component';
 import { DragDropComponent } from './components/drag-drop/drag-drop.component';
+import { InputSoluyionComponent } from './components/input-soluyion/input-soluyion.component';
 
 const routes: Routes = [
     {path:'login' , component:LoginComponent},
@@ -23,6 +24,7 @@ const routes: Routes = [
     {path: 'email' , component:EmailComponent},
     {path: 'integer' , component:IntegerInputsComponent},
     {path:'drag',component: DragDropComponent},
+    {path:'solution' , component:InputSoluyionComponent},
     {path:'**',component:NotfoundComponent}
 
   ]
