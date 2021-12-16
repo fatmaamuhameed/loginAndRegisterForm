@@ -57,7 +57,7 @@ id:5
   ngOnInit(): void {
   }
   drop(event: CdkDragDrop<string[]>) {
-    console.log(event.container.id);
+    console.log(event.container);
     
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);

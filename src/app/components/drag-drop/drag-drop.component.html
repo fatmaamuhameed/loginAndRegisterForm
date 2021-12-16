@@ -1,9 +1,7 @@
 <div cdkDropListGroup>
-
-  <!-- make Drag and Drop for more client to transfer all mission for all Employees
- -->
     <div class="example-container">
       <h2>To do</h2>
+  
       <div
         cdkDropList
         [cdkDropListData]="todo"
@@ -11,6 +9,9 @@
         (cdkDropListDropped)="drop($event)">
         <div class="example-box" *ngFor="let item of todo" cdkDrag>
                 <div class="dis w-100" data-toggle="modal" data-target="#staticBackdrop">{{item.name}}</div>
+                
+                
+  
         </div>
       </div>
     </div>
@@ -28,9 +29,8 @@
         </div>
       </div>
     </div>
-
     <div class="example-container">
-        <h2>Test</h2>
+        <h2>Done</h2>
     
         <div
           cdkDropList

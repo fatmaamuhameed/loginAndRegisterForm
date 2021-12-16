@@ -24,7 +24,7 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
-    cursor: pointer;
+    cursor: move;
     background: white;
     font-size: 14px;
   }
@@ -52,5 +52,3 @@
   .example-list.cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
     transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
   }
-
-  

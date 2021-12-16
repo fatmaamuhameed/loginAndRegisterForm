@@ -1,0 +1,68 @@
+<section>
+    <div class="container">
+        <!-- 
+            create tools
+            START CODE TOOLS
+         -->
+        <div class="row">
+            <div class="col-lg-8 brdr" id="htmlYouWantToAdd" >
+            </div>
+            <div class="col-lg-4 bg-dark">
+                <div>
+                    <h3 class="text-center text-white">Tools</h3>
+                    <div class="row justify-content-center text-center tools">
+                        <div class="col-lg-5 bg-danger">
+                            <div class="border p-2">
+                                <i class="far fa-dot-circle"></i>
+                                <h6>Radio</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 bg-danger" cdkDropList
+                        (cdkDropListDropped)="drop($event)" 
+                        [cdkDropListData]="todo">
+                            <div class="border p-2"
+                            cdkDrag
+                            >
+                                <i class="fas fa-check-square"></i>
+                                <h6>Checkbox</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 bg-danger mt-2"
+                        cdkDropList
+                        (cdkDropListDropped)="drop($event)" 
+                        [cdkDropListData]="todo"
+                        > 
+                        
+                            <div class="border p-2" cdkDrag>
+                                <i class="fas fa-align-justify"></i>
+                                <h6>input</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 bg-danger mt-2">
+                            <div class="border p-2">
+                                <i class="fas fa-font"></i>
+                                <h6>label</h6>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-5 bg-danger mt-2">
+                            <div class="border p-2">
+                                <i class="fas fa-check-double"></i>
+                                <h6>Dropdown</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+       
+       
+        </div>
+        <!-- END CODE TOOLS -->
+    </div>    
+</section>
+
+

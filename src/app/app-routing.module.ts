@@ -1,3 +1,10 @@
+import { WorkflowComponent } from './components/workflow/workflow.component';
+import { DragInputsComponent } from './components/drag-inputs/drag-inputs.component';
+import { GenerateInputsComponent } from './components/generate-inputs/generate-inputs.component';
+import { TextInputComponent } from './components/formsTemplates/text-input/text-input.component';
+import { DrobdownSearchComponent } from './components/formsTemplates/drobdown-search/drobdown-search.component';
+import { PhoneComponent } from './components/formsTemplates/phone/phone.component';
+import { FloatInputComponent } from './components/formsTemplates/float-input/float-input.component';
 import { IntegerInputsComponent } from './components/formsTemplates/integer-inputs/integer-inputs.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { LoginComponent } from './components/auth/login/login.component';
@@ -25,6 +32,13 @@ const routes: Routes = [
     {path: 'integer' , component:IntegerInputsComponent},
     {path:'drag',component: DragDropComponent},
     {path:'solution' , component:InputSoluyionComponent},
+    {path: 'float' , component:FloatInputComponent},
+    {path: 'phone' , component:PhoneComponent},
+    {path: 'drobdown' , component:DrobdownSearchComponent},
+    {path:'textinput' , component:TextInputComponent},
+    {path: 'generate' , component:GenerateInputsComponent},
+    {path: 'dragInputs' , component:DragInputsComponent},
+    {path: 'workflow' , component:WorkflowComponent},
     {path:'**',component:NotfoundComponent}
 
   ]

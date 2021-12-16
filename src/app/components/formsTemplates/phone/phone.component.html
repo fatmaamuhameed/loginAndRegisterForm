@@ -1,0 +1,27 @@
+<section class="">
+  <div class="container">
+    <input type="text" ng2TelInput [value]="numCountry" class="form-control"
+  (intlTelInputObject)="telInputObject($event)"
+  (countryChange)="onCountryChange($event)"
+  (hasError)="hasError($event)"
+  (ng2TelOutput)="getNumber($event)"
+  />
+  <button class="btn btn-primary mt-2" (click)="checkNum()">Submit</button>
+  </div>
+</section>
+
+<!-- <form name="sample-form" (ngSubmit)="submit()" #f="ngForm">
+  <international-phone-number [(ngModel)]="model.phone_number" 
+  placeholder="Enter phone number" 
+  [maxlength]="20" 
+  [defaultCountry]="'in'" 
+  [locale]="'es'" 
+  [required]="true" 
+  #phoneNumber="ngModel"
+   name="phone_number" 
+   [allowedCountries]="['in', 'ca', 'us']">
+  </international-phone-number>
+ 
+   <div *ngIf="f.submitted && !phoneNumber.valid" class="help-block">Phone number is required and should be valid</div>
+   <button type="submit">Submit</button>
+ </form> -->

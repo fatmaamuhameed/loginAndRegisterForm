@@ -20,6 +20,16 @@ export class IntegerInputsComponent implements OnInit {
   sumbitForm(IntegerInfo:any){
     console.log(IntegerInfo);
   }
+  keyPress(event: any) {
+    var txt = String.fromCharCode(event.keyCode);
+    console.log(txt);
+    if(/\++|-|\./.test(txt)){
+      return false;
+    }
+    else{
+      return true;
+    }
+  }
   get integerInput() {
     return this.IntegerForm.get('integerInput');
   } 
