@@ -1,3 +1,5 @@
+import { WorkflowComponent } from './components/workflow/workflow.component';
+import { DragInputsComponent } from './components/drag-inputs/drag-inputs.component';
 import { GenerateInputsComponent } from './components/generate-inputs/generate-inputs.component';
 import { TextInputComponent } from './components/formsTemplates/text-input/text-input.component';
 import { DrobdownSearchComponent } from './components/formsTemplates/drobdown-search/drobdown-search.component';
@@ -31,6 +33,8 @@ const routes: Routes = [
     {path: 'drobdown' , component:DrobdownSearchComponent},
     {path:'textinput' , component:TextInputComponent},
     {path: 'generate' , component:GenerateInputsComponent},
+    {path: 'dragInputs' , component:DragInputsComponent},
+    {path: 'workflow' , component:WorkflowComponent},
     {path:'**',component:NotfoundComponent}
 
   ]

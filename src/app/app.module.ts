@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 import {Ng2TelInputModule} from 'ng2-tel-input';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,6 +30,8 @@ import { DrobdownSearchComponent } from './components/formsTemplates/drobdown-se
 import { TextInputComponent } from './components/formsTemplates/text-input/text-input.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GenerateInputsComponent } from './components/generate-inputs/generate-inputs.component';
+import { DragInputsComponent } from './components/drag-inputs/drag-inputs.component';
+import { WorkflowComponent } from './components/workflow/workflow.component';
 
 
 
@@ -50,7 +53,9 @@ import { GenerateInputsComponent } from './components/generate-inputs/generate-i
     PhoneComponent,
     DrobdownSearchComponent,
     TextInputComponent,
-    GenerateInputsComponent
+    GenerateInputsComponent,
+    DragInputsComponent,
+    WorkflowComponent
   ],
   imports: [
     BrowserModule,
@@ -64,6 +69,7 @@ import { GenerateInputsComponent } from './components/generate-inputs/generate-i
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatInputModule,
+    DragDropModule,
     InternationalPhoneNumberModule
   ],
   providers: [],
